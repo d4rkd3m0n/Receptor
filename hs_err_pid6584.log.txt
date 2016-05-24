@@ -1,0 +1,333 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 32744 bytes for ChunkPool::allocate
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (allocation.cpp:273), pid=6584, tid=7244
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_20-b26) (build 1.8.0_20-b26)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.20-b23 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000000016f50800):  JavaThread "AWT-EventQueue-0" [_thread_in_native, id=7244, stack(0x0000000018240000,0x0000000018340000)]
+
+Stack: [0x0000000018240000,0x0000000018340000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x3152fa]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  com.sun.xml.internal.stream.buffer.stax.StreamReaderBufferCreator.storeElementAndChildren(Ljavax/xml/stream/XMLStreamReader;)V+1
+j  com.sun.xml.internal.stream.buffer.stax.StreamReaderBufferCreator.storeDocumentAndChildren(Ljavax/xml/stream/XMLStreamReader;)V+66
+j  com.sun.xml.internal.stream.buffer.stax.StreamReaderBufferCreator.store(Ljavax/xml/stream/XMLStreamReader;)V+54
+j  com.sun.xml.internal.stream.buffer.stax.StreamReaderBufferCreator.create(Ljavax/xml/stream/XMLStreamReader;)Lcom/sun/xml/internal/stream/buffer/MutableXMLStreamBuffer;+13
+j  com.sun.xml.internal.stream.buffer.MutableXMLStreamBuffer.createFromXMLStreamReader(Ljavax/xml/stream/XMLStreamReader;)V+15
+j  com.sun.xml.internal.stream.buffer.XMLStreamBuffer.createNewBufferFromXMLStreamReader(Ljavax/xml/stream/XMLStreamReader;)Lcom/sun/xml/internal/stream/buffer/XMLStreamBuffer;+10
+j  com.sun.xml.internal.ws.api.addressing.WSEndpointReference.<init>(Ljavax/xml/stream/XMLStreamReader;Lcom/sun/xml/internal/ws/api/addressing/AddressingVersion;)V+2
+j  com.sun.xml.internal.ws.api.addressing.WSEndpointReference.<init>(Ljava/io/InputStream;Lcom/sun/xml/internal/ws/api/addressing/AddressingVersion;)V+8
+j  com.sun.xml.internal.ws.api.addressing.AddressingVersion.<init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/sun/xml/internal/ws/api/addressing/AddressingVersion$EPR;)V+414
+j  com.sun.xml.internal.ws.api.addressing.AddressingVersion.<init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/sun/xml/internal/ws/api/addressing/AddressingVersion$EPR;Lcom/sun/xml/internal/ws/api/addressing/AddressingVersion$1;)V+18
+j  com.sun.xml.internal.ws.api.addressing.AddressingVersion$1.<init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/sun/xml/internal/ws/api/addressing/AddressingVersion$EPR;)V+19
+j  com.sun.xml.internal.ws.api.addressing.AddressingVersion.<clinit>()V+54
+v  ~StubRoutines::call_stub
+j  com.sun.xml.internal.ws.wsdl.parser.MemberSubmissionAddressingWSDLParserExtension.getWsdlActionTag()Ljavax/xml/namespace/QName;+0
+j  com.sun.xml.internal.ws.wsdl.parser.W3CAddressingWSDLParserExtension.portTypeOperationInputAttributes(Lcom/sun/xml/internal/ws/api/model/wsdl/editable/EditableWSDLInput;Ljavax/xml/stream/XMLStreamReader;)V+2
+j  com.sun.xml.internal.ws.wsdl.parser.DelegatingParserExtension.portTypeOperationInputAttributes(Lcom/sun/xml/internal/ws/api/model/wsdl/editable/EditableWSDLInput;Ljavax/xml/stream/XMLStreamReader;)V+6
+j  com.sun.xml.internal.ws.wsdl.parser.WSDLParserExtensionFacade.portTypeOperationInputAttributes(Lcom/sun/xml/internal/ws/api/model/wsdl/editable/EditableWSDLInput;Ljavax/xml/stream/XMLStreamReader;)V+29
+j  com.sun.xml.internal.ws.wsdl.parser.RuntimeWSDLParser.parsePortTypeOperationInput(Ljavax/xml/stream/XMLStreamReader;Lcom/sun/xml/internal/ws/api/model/wsdl/editable/EditableWSDLOperation;)V+53
+j  com.sun.xml.internal.ws.wsdl.parser.RuntimeWSDLParser.parsePortTypeOperation(Ljavax/xml/stream/XMLStreamReader;Lcom/sun/xml/internal/ws/api/model/wsdl/editable/EditableWSDLPortType;)V+116
+j  com.sun.xml.internal.ws.wsdl.parser.RuntimeWSDLParser.parsePortType(Ljavax/xml/stream/XMLStreamReader;)V+90
+j  com.sun.xml.internal.ws.wsdl.parser.RuntimeWSDLParser.parseWSDL(Lcom/sun/xml/internal/ws/api/wsdl/parser/XMLEntityResolver$Parser;Z)V+254
+j  com.sun.xml.internal.ws.wsdl.parser.RuntimeWSDLParser.parse(Ljava/net/URL;Ljavax/xml/transform/Source;Lorg/xml/sax/EntityResolver;ZLcom/sun/xml/internal/ws/api/server/Container;Ljava/lang/Class;Lcom/sun/xml/internal/ws/api/policy/PolicyResolver;Z[Lcom/sun/xml/internal/ws/api/wsdl/parser/WSDLParserExtension;)Lcom/sun/xml/internal/ws/api/model/wsdl/WSDLModel;+188
+j  com.sun.xml.internal.ws.wsdl.parser.RuntimeWSDLParser.parse(Ljava/net/URL;Ljavax/xml/transform/Source;Lorg/xml/sax/EntityResolver;ZLcom/sun/xml/internal/ws/api/server/Container;Ljava/lang/Class;Lcom/sun/xml/internal/ws/api/policy/PolicyResolver;[Lcom/sun/xml/internal/ws/api/wsdl/parser/WSDLParserExtension;)Lcom/sun/xml/internal/ws/api/model/wsdl/WSDLModel;+13
+j  com.sun.xml.internal.ws.wsdl.parser.RuntimeWSDLParser.parse(Ljava/net/URL;Ljavax/xml/transform/Source;Lorg/xml/sax/EntityResolver;ZLcom/sun/xml/internal/ws/api/server/Container;Ljava/lang/Class;[Lcom/sun/xml/internal/ws/api/wsdl/parser/WSDLParserExtension;)Lcom/sun/xml/internal/ws/api/model/wsdl/WSDLModel;+13
+j  com.sun.xml.internal.ws.client.WSServiceDelegate.parseWSDL(Ljava/net/URL;Ljavax/xml/transform/Source;Ljava/lang/Class;)Lcom/sun/xml/internal/ws/api/model/wsdl/WSDLModel;+23
+j  com.sun.xml.internal.ws.client.WSServiceDelegate.<init>(Ljavax/xml/transform/Source;Lcom/sun/xml/internal/ws/api/model/wsdl/WSDLService;Ljavax/xml/namespace/QName;Ljava/lang/Class;Lcom/sun/xml/internal/ws/binding/WebServiceFeatureList;)V+546
+j  com.sun.xml.internal.ws.client.WSServiceDelegate.<init>(Ljavax/xml/transform/Source;Ljavax/xml/namespace/QName;Ljava/lang/Class;Lcom/sun/xml/internal/ws/binding/WebServiceFeatureList;)V+7
+j  com.sun.xml.internal.ws.client.WSServiceDelegate.<init>(Ljava/net/URL;Ljavax/xml/namespace/QName;Ljava/lang/Class;Lcom/sun/xml/internal/ws/binding/WebServiceFeatureList;)V+24
+j  com.sun.xml.internal.ws.client.WSServiceDelegate.<init>(Ljava/net/URL;Ljavax/xml/namespace/QName;Ljava/lang/Class;[Ljavax/xml/ws/WebServiceFeature;)V+13
+j  com.sun.xml.internal.ws.spi.ProviderImpl.createServiceDelegate(Ljava/net/URL;Ljavax/xml/namespace/QName;Ljava/lang/Class;)Ljavax/xml/ws/spi/ServiceDelegate;+11
+j  javax.xml.ws.Service.<init>(Ljava/net/URL;Ljavax/xml/namespace/QName;)V+14
+j  com.esperapp.ws.AsignarTurnos_Service.<init>()V+7
+j  com.esperapp.metodos.Receptor.loginEmpleado(Ljava/lang/String;Ljava/lang/String;)Z+4
+j  com.esperapp.metodos.Receptor.login(Ljava/lang/String;Ljava/lang/String;)Z+4
+j  com.esperapp.GUI.login.IngresarButtonActionPerformed(Ljava/awt/event/ActionEvent;)V+56
+j  com.esperapp.GUI.login.access$000(Lcom/esperapp/GUI/login;Ljava/awt/event/ActionEvent;)V+2
+j  com.esperapp.GUI.login$1.actionPerformed(Ljava/awt/event/ActionEvent;)V+5
+j  javax.swing.AbstractButton.fireActionPerformed(Ljava/awt/event/ActionEvent;)V+83
+j  javax.swing.AbstractButton$Handler.actionPerformed(Ljava/awt/event/ActionEvent;)V+5
+j  javax.swing.DefaultButtonModel.fireActionPerformed(Ljava/awt/event/ActionEvent;)V+34
+j  javax.swing.DefaultButtonModel.setPressed(Z)V+117
+j  javax.swing.plaf.basic.BasicButtonListener.mouseReleased(Ljava/awt/event/MouseEvent;)V+35
+j  java.awt.Component.processMouseEvent(Ljava/awt/event/MouseEvent;)V+64
+j  javax.swing.JComponent.processMouseEvent(Ljava/awt/event/MouseEvent;)V+23
+j  java.awt.Component.processEvent(Ljava/awt/AWTEvent;)V+81
+j  java.awt.Container.processEvent(Ljava/awt/AWTEvent;)V+18
+j  java.awt.Component.dispatchEventImpl(Ljava/awt/AWTEvent;)V+589
+j  java.awt.Container.dispatchEventImpl(Ljava/awt/AWTEvent;)V+42
+j  java.awt.Component.dispatchEvent(Ljava/awt/AWTEvent;)V+2
+j  java.awt.LightweightDispatcher.retargetMouseEvent(Ljava/awt/Component;ILjava/awt/event/MouseEvent;)V+327
+j  java.awt.LightweightDispatcher.processMouseEvent(Ljava/awt/event/MouseEvent;)Z+143
+j  java.awt.LightweightDispatcher.dispatchEvent(Ljava/awt/AWTEvent;)Z+50
+j  java.awt.Container.dispatchEventImpl(Ljava/awt/AWTEvent;)V+12
+j  java.awt.Window.dispatchEventImpl(Ljava/awt/AWTEvent;)V+19
+j  java.awt.Component.dispatchEvent(Ljava/awt/AWTEvent;)V+2
+j  java.awt.EventQueue.dispatchEventImpl(Ljava/awt/AWTEvent;Ljava/lang/Object;)V+41
+j  java.awt.EventQueue.access$400(Ljava/awt/EventQueue;Ljava/awt/AWTEvent;Ljava/lang/Object;)V+3
+j  java.awt.EventQueue$3.run()Ljava/lang/Void;+32
+j  java.awt.EventQueue$3.run()Ljava/lang/Object;+1
+v  ~StubRoutines::call_stub
+J 721  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;)Ljava/lang/Object; (0 bytes) @ 0x0000000002fd94e6 [0x0000000002fd9480+0x66]
+J 806 C1 java.security.ProtectionDomain$1.doIntersectionPrivilege(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;Ljava/security/AccessControlContext;)Ljava/lang/Object; (32 bytes) @ 0x0000000002ffe11c [0x0000000002ffde20+0x2fc]
+j  java.security.ProtectionDomain$1.doIntersectionPrivilege(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;+6
+j  java.awt.EventQueue$4.run()Ljava/lang/Void;+11
+j  java.awt.EventQueue$4.run()Ljava/lang/Object;+1
+v  ~StubRoutines::call_stub
+J 721  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;)Ljava/lang/Object; (0 bytes) @ 0x0000000002fd94e6 [0x0000000002fd9480+0x66]
+J 873 C1 java.awt.EventQueue.dispatchEvent(Ljava/awt/AWTEvent;)V (80 bytes) @ 0x0000000003020334 [0x000000000301f680+0xcb4]
+J 878 C1 java.awt.EventDispatchThread.pumpOneEventForFilters(I)V (295 bytes) @ 0x0000000003024c6c [0x0000000003022fc0+0x1cac]
+j  java.awt.EventDispatchThread.pumpEventsForFilter(ILjava/awt/Conditional;Ljava/awt/EventFilter;)V+35
+j  java.awt.EventDispatchThread.pumpEventsForHierarchy(ILjava/awt/Conditional;Ljava/awt/Component;)V+11
+j  java.awt.EventDispatchThread.pumpEvents(ILjava/awt/Conditional;)V+4
+j  java.awt.EventDispatchThread.pumpEvents(Ljava/awt/Conditional;)V+3
+j  java.awt.EventDispatchThread.run()V+9
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x0000000018737000 JavaThread "TimerQueue" daemon [_thread_blocked, id=7080, stack(0x0000000017c50000,0x0000000017d50000)]
+  0x0000000002c20800 JavaThread "DestroyJavaVM" [_thread_blocked, id=5780, stack(0x0000000002ad0000,0x0000000002bd0000)]
+=>0x0000000016f50800 JavaThread "AWT-EventQueue-0" [_thread_in_native, id=7244, stack(0x0000000018240000,0x0000000018340000)]
+  0x0000000016ed7000 JavaThread "AWT-Windows" daemon [_thread_in_native, id=8584, stack(0x0000000017760000,0x0000000017860000)]
+  0x0000000016ed4000 JavaThread "AWT-Shutdown" [_thread_blocked, id=4584, stack(0x0000000017660000,0x0000000017760000)]
+  0x0000000016ed3800 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=1872, stack(0x0000000017560000,0x0000000017660000)]
+  0x0000000016bac800 JavaThread "Service Thread" daemon [_thread_blocked, id=7856, stack(0x0000000016f80000,0x0000000017080000)]
+  0x0000000015326800 JavaThread "C1 CompilerThread2" daemon [_thread_in_native, id=916, stack(0x0000000016a80000,0x0000000016b80000)]
+  0x0000000015320000 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=8200, stack(0x0000000016980000,0x0000000016a80000)]
+  0x000000001531c800 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=4308, stack(0x0000000016880000,0x0000000016980000)]
+  0x000000001531a800 JavaThread "Attach Listener" daemon [_thread_blocked, id=6796, stack(0x0000000016780000,0x0000000016880000)]
+  0x0000000015319800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=8664, stack(0x0000000016680000,0x0000000016780000)]
+  0x0000000002d16000 JavaThread "Finalizer" daemon [_thread_blocked, id=4732, stack(0x0000000016580000,0x0000000016680000)]
+  0x0000000002d0d000 JavaThread "Reference Handler" daemon [_thread_blocked, id=4924, stack(0x0000000016480000,0x0000000016580000)]
+
+Other Threads:
+  0x00000000152e6800 VMThread [stack: 0x0000000016380000,0x0000000016480000] [id=7492]
+  0x0000000016bae800 WatcherThread [stack: 0x0000000017080000,0x0000000017180000] [id=6448]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ PSYoungGen      total 18944K, used 11302K [0x00000000eb200000, 0x00000000ec700000, 0x0000000100000000)
+  eden space 16384K, 68% used [0x00000000eb200000,0x00000000ebd099f8,0x00000000ec200000)
+  from space 2560K, 0% used [0x00000000ec200000,0x00000000ec200000,0x00000000ec480000)
+  to   space 2560K, 0% used [0x00000000ec480000,0x00000000ec480000,0x00000000ec700000)
+ ParOldGen       total 31744K, used 813K [0x00000000c1600000, 0x00000000c3500000, 0x00000000eb200000)
+  object space 31744K, 2% used [0x00000000c1600000,0x00000000c16cb718,0x00000000c3500000)
+ Metaspace       used 13779K, capacity 13992K, committed 14208K, reserved 1064960K
+  class space    used 1728K, capacity 1794K, committed 1920K, reserved 1048576K
+
+Card table byte_map: [0x00000000120e0000,0x00000000122e0000] byte_map_base: 0x0000000011ad5000
+
+Marking Bits: (ParMarkBitMap*) 0x000000007181b460
+ Begin Bits: [0x0000000012830000, 0x00000000137d8000)
+ End Bits:   [0x00000000137d8000, 0x0000000014780000)
+
+Polling page: 0x00000000011b0000
+
+CodeCache: size=245760Kb used=3232Kb max_used=3232Kb free=242527Kb
+ bounds [0x0000000002d20000, 0x0000000003050000, 0x0000000011d20000]
+ total_blobs=1437 nmethods=940 adapters=411
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 33.973 Thread 0x0000000015326800 nmethod 936 0x0000000003045c10 code [0x0000000003045d60, 0x0000000003045f10]
+Event: 33.974 Thread 0x0000000015326800  937       3       com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl::next (39 bytes)
+Event: 33.975 Thread 0x0000000015326800 nmethod 937 0x0000000003045fd0 code [0x0000000003046160, 0x0000000003046548]
+Event: 33.975 Thread 0x0000000015326800  941       3       com.sun.org.apache.xerces.internal.impl.XMLEntityScanner::scanQName (512 bytes)
+Event: 33.976 Thread 0x0000000015326800 nmethod 941 0x0000000003046750 code [0x0000000003046a00, 0x0000000003047bb8]
+Event: 33.976 Thread 0x0000000015326800  943       3       com.sun.org.apache.xerces.internal.util.NamespaceSupport::getURI (38 bytes)
+Event: 33.976 Thread 0x0000000015326800 nmethod 943 0x00000000030486d0 code [0x0000000003048840, 0x0000000003048ad0]
+Event: 33.976 Thread 0x0000000015326800  938       3       com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl::next (10 bytes)
+Event: 33.977 Thread 0x0000000015326800 nmethod 938 0x0000000003048c10 code [0x0000000003048d80, 0x0000000003048fa8]
+Event: 33.977 Thread 0x0000000015326800  940   !   3       com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver::next (2345 bytes)
+
+GC Heap History (4 events):
+Event: 0.289 GC heap before
+{Heap before GC invocations=1 (full 0):
+ PSYoungGen      total 18944K, used 2953K [0x00000000eb200000, 0x00000000ec700000, 0x0000000100000000)
+  eden space 16384K, 18% used [0x00000000eb200000,0x00000000eb4e27a0,0x00000000ec200000)
+  from space 2560K, 0% used [0x00000000ec480000,0x00000000ec480000,0x00000000ec700000)
+  to   space 2560K, 0% used [0x00000000ec200000,0x00000000ec200000,0x00000000ec480000)
+ ParOldGen       total 44032K, used 0K [0x00000000c1600000, 0x00000000c4100000, 0x00000000eb200000)
+  object space 44032K, 0% used [0x00000000c1600000,0x00000000c1600000,0x00000000c4100000)
+ Metaspace       used 6268K, capacity 6350K, committed 6400K, reserved 1060864K
+  class space    used 709K, capacity 766K, committed 768K, reserved 1048576K
+Event: 0.292 GC heap after
+Heap after GC invocations=1 (full 0):
+ PSYoungGen      total 18944K, used 912K [0x00000000eb200000, 0x00000000ec700000, 0x0000000100000000)
+  eden space 16384K, 0% used [0x00000000eb200000,0x00000000eb200000,0x00000000ec200000)
+  from space 2560K, 35% used [0x00000000ec200000,0x00000000ec2e4010,0x00000000ec480000)
+  to   space 2560K, 0% used [0x00000000ec480000,0x00000000ec480000,0x00000000ec700000)
+ ParOldGen       total 44032K, used 8K [0x00000000c1600000, 0x00000000c4100000, 0x00000000eb200000)
+  object space 44032K, 0% used [0x00000000c1600000,0x00000000c1602000,0x00000000c4100000)
+ Metaspace       used 6268K, capacity 6350K, committed 6400K, reserved 1060864K
+  class space    used 709K, capacity 766K, committed 768K, reserved 1048576K
+}
+Event: 0.292 GC heap before
+{Heap before GC invocations=2 (full 1):
+ PSYoungGen      total 18944K, used 912K [0x00000000eb200000, 0x00000000ec700000, 0x0000000100000000)
+  eden space 16384K, 0% used [0x00000000eb200000,0x00000000eb200000,0x00000000ec200000)
+  from space 2560K, 35% used [0x00000000ec200000,0x00000000ec2e4010,0x00000000ec480000)
+  to   space 2560K, 0% used [0x00000000ec480000,0x00000000ec480000,0x00000000ec700000)
+ ParOldGen       total 44032K, used 8K [0x00000000c1600000, 0x00000000c4100000, 0x00000000eb200000)
+  object space 44032K, 0% used [0x00000000c1600000,0x00000000c1602000,0x00000000c4100000)
+ Metaspace       used 6268K, capacity 6350K, committed 6400K, reserved 1060864K
+  class space    used 709K, capacity 766K, committed 768K, reserved 1048576K
+Event: 0.307 GC heap after
+Heap after GC invocations=2 (full 1):
+ PSYoungGen      total 18944K, used 0K [0x00000000eb200000, 0x00000000ec700000, 0x0000000100000000)
+  eden space 16384K, 0% used [0x00000000eb200000,0x00000000eb200000,0x00000000ec200000)
+  from space 2560K, 0% used [0x00000000ec200000,0x00000000ec200000,0x00000000ec480000)
+  to   space 2560K, 0% used [0x00000000ec480000,0x00000000ec480000,0x00000000ec700000)
+ ParOldGen       total 31744K, used 813K [0x00000000c1600000, 0x00000000c3500000, 0x00000000eb200000)
+  object space 31744K, 2% used [0x00000000c1600000,0x00000000c16cb718,0x00000000c3500000)
+ Metaspace       used 6267K, capacity 6348K, committed 6400K, reserved 1058816K
+  class space    used 708K, capacity 765K, committed 768K, reserved 1048576K
+}
+
+Deoptimization events (4 events):
+Event: 29.386 Thread 0x0000000016f50800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x0000000002eb481c method=java.lang.String.equals(Ljava/lang/Object;)Z @ 8
+Event: 29.386 Thread 0x0000000016f50800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x0000000002eb481c method=java.lang.String.equals(Ljava/lang/Object;)Z @ 8
+Event: 29.431 Thread 0x0000000016f50800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x0000000002eb481c method=java.lang.String.equals(Ljava/lang/Object;)Z @ 8
+Event: 29.431 Thread 0x0000000016f50800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x0000000002eb481c method=java.lang.String.equals(Ljava/lang/Object;)Z @ 8
+
+Internal exceptions (10 events):
+Event: 0.397 Thread 0x0000000016f50800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000eb3ad140) thrown at [D:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u20\1074\hotspot\src\share\vm\prims\jvm.cpp, line 1275]
+Event: 0.398 Thread 0x0000000016f50800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000eb3ae590) thrown at [D:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u20\1074\hotspot\src\share\vm\prims\jvm.cpp, line 1275]
+Event: 0.465 Thread 0x0000000016f50800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000eb4823b8) thrown at [D:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u20\1074\hotspot\src\share\vm\prims\jvm.cpp, line 1275]
+Event: 0.466 Thread 0x0000000016f50800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000eb483b98) thrown at [D:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u20\1074\hotspot\src\share\vm\prims\jvm.cpp, line 1275]
+Event: 33.884 Thread 0x0000000016f50800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000ebc2b340) thrown at [D:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u20\1074\hotspot\src\share\vm\prims\jvm.cpp, line 1275]
+Event: 33.887 Thread 0x0000000016f50800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000ebc2d1a0) thrown at [D:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u20\1074\hotspot\src\share\vm\prims\jvm.cpp, line 1275]
+Event: 33.890 Thread 0x0000000016f50800 Exception <a 'java/lang/ClassNotFoundException': com/sun/org/glassfish/hk2/osgiresourcelocator/ServiceLoader> (0x00000000ebc327f0) thrown at [D:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u20\1074\hotspot\src\share\vm\classfile\systemDictionary.cpp, l¤Ò˜.ó@@
+Event: 33.900 Thread 0x0000000016f50800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000ebc3fb80) thrown at [D:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u20\1074\hotspot\src\share\vm\prims\jvm.cpp, line 1275]
+Event: 33.900 Thread 0x0000000016f50800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000ebc411b0) thrown at [D:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u20\1074\hotspot\src\share\vm\prims\jvm.cpp, line 1275]
+Event: 33.922 Thread 0x0000000016f50800 Exception <a 'java/io/FileNotFoundException'> (0x00000000ebc8b230) thrown at [D:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u20\1074\hotspot\src\share\vm\prims\jni.cpp, line 716]
+
+Events (10 events):
+Event: 33.981 loading class com/sun/xml/internal/stream/buffer/FragmentedArray done
+Event: 33.981 loading class com/sun/xml/internal/stream/buffer/stax/StreamReaderBufferCreator
+Event: 33.981 loading class com/sun/xml/internal/stream/buffer/stax/StreamBufferCreator
+Event: 33.981 loading class com/sun/xml/internal/stream/buffer/AbstractCreator
+Event: 33.981 loading class com/sun/xml/internal/stream/buffer/AbstractCreatorProcessor
+Event: 33.982 loading class com/sun/xml/internal/stream/buffer/AbstractCreatorProcessor done
+Event: 33.982 loading class com/sun/xml/internal/stream/buffer/AbstractCreator done
+Event: 33.982 loading class com/sun/xml/internal/stream/buffer/stax/StreamBufferCreator done
+Event: 33.982 loading class com/sun/xml/internal/stream/buffer/stax/StreamReaderBufferCreator done
+Event: 33.982 loading class com/sun/xml/internal/org/jvnet/staxex/XMLStreamReaderEx
+
+
+Dynamic libraries:
+0x00007ff7afbb0000 - 0x00007ff7afbe4000 	C:\Program Files\Java\jdk1.8.0_20\jre\bin\java.exe
+0x00007ffe999d0000 - 0x00007ffe99b7a000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffe976f0000 - 0x00007ffe9782a000 	C:\WINDOWS\system32\KERNEL32.DLL
+0x00007ffe97140000 - 0x00007ffe97250000 	C:\WINDOWS\system32\KERNELBASE.dll
+0x00007ffe95970000 - 0x00007ffe959f8000 	C:\WINDOWS\system32\apphelp.dll
+0x00007ffe87cf0000 - 0x00007ffe87d3f000 	C:\WINDOWS\AppPatch\AppPatch64\AcGenral.DLL
+0x00007ffe97450000 - 0x00007ffe974f7000 	C:\WINDOWS\system32\msvcrt.dll
+0x00007ffe96bf0000 - 0x00007ffe96c1b000 	C:\WINDOWS\SYSTEM32\SspiCli.dll
+0x00007ffe97890000 - 0x00007ffe978e1000 	C:\WINDOWS\system32\SHLWAPI.dll
+0x00007ffe99670000 - 0x00007ffe997e1000 	C:\WINDOWS\system32\USER32.dll
+0x00007ffe97560000 - 0x00007ffe976d8000 	C:\WINDOWS\system32\ole32.dll
+0x00007ffe98140000 - 0x00007ffe99557000 	C:\WINDOWS\system32\SHELL32.dll
+0x00007ffe963d0000 - 0x00007ffe963ef000 	C:\WINDOWS\SYSTEM32\USERENV.dll
+0x00007ffe97250000 - 0x00007ffe972f5000 	C:\WINDOWS\system32\ADVAPI32.dll
+0x00007ffe8ba90000 - 0x00007ffe8baab000 	C:\WINDOWS\SYSTEM32\MPR.dll
+0x00007ffe97d40000 - 0x00007ffe97e76000 	C:\WINDOWS\system32\RPCRT4.dll
+0x00007ffe97500000 - 0x00007ffe97557000 	C:\WINDOWS\SYSTEM32\sechost.dll
+0x00007ffe97b60000 - 0x00007ffe97d36000 	C:\WINDOWS\SYSTEM32\combase.dll
+0x00007ffe97a10000 - 0x00007ffe97b55000 	C:\WINDOWS\system32\GDI32.dll
+0x00007ffe96d40000 - 0x00007ffe96d54000 	C:\WINDOWS\SYSTEM32\profapi.dll
+0x00007ffe95200000 - 0x00007ffe9529f000 	C:\WINDOWS\SYSTEM32\SHCORE.dll
+0x00007ffe97850000 - 0x00007ffe97884000 	C:\WINDOWS\system32\IMM32.DLL
+0x00007ffe97310000 - 0x00007ffe97449000 	C:\WINDOWS\system32\MSCTF.dll
+0x00007ffe94920000 - 0x00007ffe94b7a000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.9600.17031_none_6242a4b3ecbb55a1\COMCTL32.dll
+0x0000000072910000 - 0x00000000729e2000 	C:\Program Files\Java\jdk1.8.0_20\jre\bin\msvcr100.dll
+0x0000000071040000 - 0x0000000071898000 	C:\Program Files\Java\jdk1.8.0_20\jre\bin\server\jvm.dll
+0x00007ffe86200000 - 0x00007ffe86209000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ffe883f0000 - 0x00007ffe8840f000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ffe976e0000 - 0x00007ffe976e7000 	C:\WINDOWS\system32\PSAPI.DLL
+0x00007ffe98020000 - 0x00007ffe98078000 	C:\WINDOWS\system32\WS2_32.dll
+0x00007ffe87450000 - 0x00007ffe8747a000 	C:\WINDOWS\SYSTEM32\WINMMBASE.dll
+0x00007ffe97a00000 - 0x00007ffe97a09000 	C:\WINDOWS\system32\NSI.dll
+0x00007ffe96ec0000 - 0x00007ffe96f0a000 	C:\WINDOWS\SYSTEM32\cfgmgr32.dll
+0x00007ffe95bc0000 - 0x00007ffe95be6000 	C:\WINDOWS\SYSTEM32\DEVOBJ.dll
+0x00000000728c0000 - 0x00000000728cf000 	C:\Program Files\Java\jdk1.8.0_20\jre\bin\verify.dll
+0x0000000072890000 - 0x00000000728b8000 	C:\Program Files\Java\jdk1.8.0_20\jre\bin\java.dll
+0x0000000072870000 - 0x0000000072886000 	C:\Program Files\Java\jdk1.8.0_20\jre\bin\zip.dll
+0x0000000070ea0000 - 0x0000000071038000 	C:\Program Files\Java\jdk1.8.0_20\jre\bin\awt.dll
+0x00007ffe98080000 - 0x00007ffe98137000 	C:\WINDOWS\system32\OLEAUT32.dll
+0x00007ffe95a40000 - 0x00007ffe95b61000 	C:\WINDOWS\system32\uxtheme.dll
+0x00007ffe894f0000 - 0x00007ffe89588000 	C:\Program Files\Common Files\microsoft shared\ink\tiptsf.dll
+0x00007ffe95030000 - 0x00007ffe95050000 	C:\WINDOWS\system32\dwmapi.dll
+0x00007ffe95c30000 - 0x00007ffe95c3a000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ffe96c80000 - 0x00007ffe96c8a000 	C:\WINDOWS\SYSTEM32\CRYPTBASE.dll
+0x00007ffe96c20000 - 0x00007ffe96c80000 	C:\WINDOWS\SYSTEM32\bcryptPrimitives.dll
+0x00000000727e0000 - 0x0000000072827000 	C:\Program Files\Java\jdk1.8.0_20\jre\bin\fontmanager.dll
+0x00007ffe995c0000 - 0x00007ffe99664000 	C:\WINDOWS\SYSTEM32\clbcatq.dll
+0x00007ffe91ab0000 - 0x00007ffe91c43000 	C:\WINDOWS\SYSTEM32\WindowsCodecs.dll
+0x00007ffe966d0000 - 0x00007ffe966ee000 	C:\WINDOWS\SYSTEM32\CRYPTSP.dll
+0x00007ffe962c0000 - 0x00007ffe962f5000 	C:\WINDOWS\system32\rsaenh.dll
+0x00007ffe96900000 - 0x00007ffe96926000 	C:\WINDOWS\SYSTEM32\bcrypt.dll
+0x0000000072850000 - 0x000000007286a000 	C:\Program Files\Java\jdk1.8.0_20\jre\bin\net.dll
+0x00007ffe96670000 - 0x00007ffe966c8000 	C:\WINDOWS\system32\mswsock.dll
+0x0000000072830000 - 0x0000000072841000 	C:\Program Files\Java\jdk1.8.0_20\jre\bin\nio.dll
+0x0000000072790000 - 0x00000000727d1000 	C:\Program Files\Java\jdk1.8.0_20\jre\bin\t2k.dll
+0x00007ffe91d10000 - 0x00007ffe91d73000 	C:\WINDOWS\SYSTEM32\oleacc.dll
+0x0000000072720000 - 0x000000007274a000 	C:\Program Files\Java\jdk1.8.0_20\jre\bin\dcpr.dll
+
+VM Arguments:
+jvm_args: -Dfile.encoding=UTF-8 
+java_command: com.esperapp.GUI.login
+java_class_path (initial): C:\Users\Joako\Documents\NetBeansProjects\Receptor\build\classes
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.8.0_20
+CLASSPATH=E:\LINGO64_15\Lingo14.jar
+PATH=E:\Instalacion MikTeX\miktex\bin;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;E:\LINGO64_15\;C:\Program Files (x86)\Skype\Phone\;C:\Program Files (x86)\Sophos\Sophos SSL VPN Client\bin
+USERNAME=Joako
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 69 Stepping 1, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 8.1 , 64 bit Build 9600 
+
+CPU:total 4 (2 cores per cpu, 2 threads per core) family 6 model 69 stepping 1, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2
+
+Memory: 4k page, physical 4100036k(654376k free), swap 4612036k(3544k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.20-b23) for windows-amd64 JRE (1.8.0_20-b26), built on Jul 30 2014 13:51:23 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Sun Aug 02 19:04:30 2015
+elapsed time: 33 seconds (0d 0h 0m 33s)
+
