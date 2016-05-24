@@ -28,8 +28,8 @@ public class Receptor {
         retorno = loginEmpleado(cedula, contrasena, idSede);
         return retorno;
     }
-    public List<String> LlenarTextField(String cedulaEmp){
-        List<String> respuesta = atenderCliente("1", cedulaEmp);
+    public List<String> LlenarTextField(String cedulaEmp, String idSede){
+        List<String> respuesta = atenderCliente(idSede, cedulaEmp);
         if(respuesta.equals(null)){
             
             System.out.println("Entro if");
@@ -48,6 +48,7 @@ public class Receptor {
     }
     public List<Turno> TurnosNoAtendidos(String idSede){
         List<Turno> retorno;
+        System.out.println("id sede"+idSede);
         retorno = turnosNoAtendidosEmpleado(idSede);
         return retorno;
     }

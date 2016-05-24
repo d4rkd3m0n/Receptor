@@ -164,12 +164,15 @@ public class login extends javax.swing.JFrame {
         String[] idSede;
         idSede = auxCombo.split("-");
         
-        String sed = idSede[1]; 
+        String sed = new String();
+        sed = idSede[1]; 
         sed=sed.replaceAll("\\s+","");
         if(r.login(cedula, contrasena, sed)){
             PantallaReceptor pr = new PantallaReceptor();
             //pr.idSede = idSede;
             pr.jTextFieldCedula.setText(cedula);
+            pr.jTextFieldIDSede.setText(sed);
+            System.out.println("sed jt"+pr.jTextFieldIDSede.getText());
             pr.setVisible(true);
             this.dispose();
         }else{
@@ -189,6 +192,7 @@ public class login extends javax.swing.JFrame {
         List<Sede> aux = r.LlenarComboBox(Nit);
         String nombreE = r.buscarNombreEntidadXNit(Nit);
         if(!aux.equals(null)){
+            jComboBoxSedes.removeAllItems();
             LlenarCombo(aux, nombreE);
         }else{
             JOptionPane.showMessageDialog(null, "No hay sedes asociadas al nit");
