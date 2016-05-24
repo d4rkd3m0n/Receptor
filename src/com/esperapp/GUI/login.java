@@ -172,6 +172,7 @@ public class login extends javax.swing.JFrame {
             //pr.idSede = idSede;
             pr.jTextFieldCedula.setText(cedula);
             pr.jTextFieldIDSede.setText(sed);
+            pr.Primera();
             System.out.println("sed jt"+pr.jTextFieldIDSede.getText());
             pr.setVisible(true);
             this.dispose();

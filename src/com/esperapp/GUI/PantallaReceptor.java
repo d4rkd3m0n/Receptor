@@ -32,6 +32,7 @@ public class PantallaReceptor extends javax.swing.JFrame {
         this.jTextFieldCedula.setVisible(false);
         this.jTextFieldTurno.setVisible(false);
         this.jTextFieldIDSede.setVisible(false);
+        this.jTextFieldEstado.setText("Libre");
         Primera();
         
     }
@@ -57,7 +58,6 @@ public class PantallaReceptor extends javax.swing.JFrame {
         jTextFieldTurno = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTableTurnosN = new javax.swing.JTable();
-        jTextFieldIDSede = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -212,11 +212,8 @@ public class PantallaReceptor extends javax.swing.JFrame {
         if(!jTextFieldTurno.equals(null)){
             respuesta=r.RegistrarComoAtendido(jTextFieldTurno.getText(), this.jTextFieldIDSede.getText());
             if(respuesta.equals("0")){
-                this.jTextFieldEstado.setText("Ocupado");
-                
-            }
-            if(respuesta.equals("1")){
                 this.jTextFieldEstado.setText("Libre");
+                
             }
             this.jTextFieldEstado.updateUI();
         }
@@ -247,6 +244,7 @@ public class PantallaReceptor extends javax.swing.JFrame {
             total = "Atendiendo el turno: "+t.get(0)+" del usuario: "+t.get(1)+" con correo: "+t.get(2);
             jTextFieldTurno.setText(t.get(0));
             this.TurnoActual.setText(total);
+            this.jTextFieldEstado.setText("Ocupado");
             this.TurnoActual.updateUI();
             
         }else{
@@ -317,7 +315,7 @@ public class PantallaReceptor extends javax.swing.JFrame {
     private javax.swing.JTable jTableTurnosN;
     public javax.swing.JTextField jTextFieldCedula;
     private javax.swing.JTextField jTextFieldEstado;
-    public javax.swing.JTextField jTextFieldIDSede;
+    public final javax.swing.JTextField jTextFieldIDSede = new javax.swing.JTextField();
     private javax.swing.JTextField jTextFieldTurno;
     // End of variables declaration//GEN-END:variables
 
@@ -343,7 +341,7 @@ public class PantallaReceptor extends javax.swing.JFrame {
         this.jTableTurnosN.setModel(Model);
     }
 
-    private void Primera() {
+    public void Primera() {
         Receptor r = new Receptor();
         String idS = this.jTextFieldIDSede.getText();
         System.out.println("ids"+idS);
