@@ -6,9 +6,7 @@
 package com.esperapp.GUI;
 
 import com.esperapp.metodos.Receptor;
-import com.esperapp.metodos.TurnoCompleto;
 import com.esperapp.ws.Turno;
-//import com.esperapp.ws.TurnoBackUp;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;

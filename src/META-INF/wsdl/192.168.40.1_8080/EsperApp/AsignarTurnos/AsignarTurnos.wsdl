@@ -60,6 +60,10 @@
 
   <xs:element name="CambiarEstado" type="tns:CambiarEstado"/>
 
+  <xs:element name="EditarCuentaAdmin" type="tns:EditarCuentaAdmin"/>
+
+  <xs:element name="EditarCuentaAdminResponse" type="tns:EditarCuentaAdminResponse"/>
+
   <xs:element name="EnviarNotificacion" type="tns:EnviarNotificacion"/>
 
   <xs:element name="EnviarNotificacionResponse" type="tns:EnviarNotificacionResponse"/>
@@ -362,6 +366,20 @@
   <xs:complexType name="AgregarReceptorResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="EditarCuentaAdmin">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Correo_Id" type="xs:string"/>
+      <xs:element minOccurs="0" name="nombre" type="xs:string"/>
+      <xs:element minOccurs="0" name="contra" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="EditarCuentaAdminResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
     </xs:sequence>
   </xs:complexType>
 
@@ -719,8 +737,16 @@
     <wsdl:part element="tns:AgregarReceptor" name="parameters">
     </wsdl:part>
   </wsdl:message>
+  <wsdl:message name="EditarCuentaAdmin">
+    <wsdl:part element="tns:EditarCuentaAdmin" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
   <wsdl:message name="BuscarEmpleado">
     <wsdl:part element="tns:BuscarEmpleado" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="EditarCuentaAdminResponse">
+    <wsdl:part element="tns:EditarCuentaAdminResponse" name="parameters">
     </wsdl:part>
   </wsdl:message>
   <wsdl:message name="BuscarServiciosSede">
@@ -850,6 +876,12 @@
       <wsdl:input message="tns:AgregarReceptor" name="AgregarReceptor">
     </wsdl:input>
       <wsdl:output message="tns:AgregarReceptorResponse" name="AgregarReceptorResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditarCuentaAdmin">
+      <wsdl:input message="tns:EditarCuentaAdmin" name="EditarCuentaAdmin">
+    </wsdl:input>
+      <wsdl:output message="tns:EditarCuentaAdminResponse" name="EditarCuentaAdminResponse">
     </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="enviarTrabajo">
@@ -1056,6 +1088,15 @@
         <soap:body use="literal"/>
       </wsdl:input>
       <wsdl:output name="AgregarReceptorResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditarCuentaAdmin">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="EditarCuentaAdmin">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="EditarCuentaAdminResponse">
         <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>

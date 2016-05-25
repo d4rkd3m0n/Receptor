@@ -161,23 +161,28 @@ public class login extends javax.swing.JFrame {
         Receptor r = new Receptor();
         String auxCombo;
         auxCombo = this.jComboBoxSedes.getSelectedItem().toString();
-        String[] idSede;
-        idSede = auxCombo.split("-");
-        
-        String sed = new String();
-        sed = idSede[1]; 
-        sed=sed.replaceAll("\\s+","");
-        if(r.login(cedula, contrasena, sed)){
-            PantallaReceptor pr = new PantallaReceptor();
-            //pr.idSede = idSede;
-            pr.jTextFieldCedula.setText(cedula);
-            pr.jTextFieldIDSede.setText(sed);
-            pr.Primera();
-            System.out.println("sed jt"+pr.jTextFieldIDSede.getText());
-            pr.setVisible(true);
-            this.dispose();
+        System.out.println("auxcombo "+auxCombo);
+        if(!auxCombo.equals(null)){
+            String[] idSede;
+            idSede = auxCombo.split("-");
+
+            String sed = new String();
+            sed = idSede[1]; 
+            sed=sed.replaceAll("\\s+","");
+            if(r.login(cedula, contrasena, sed)){
+                PantallaReceptor pr = new PantallaReceptor();
+                //pr.idSede = idSede;
+                pr.jTextFieldCedula.setText(cedula);
+                pr.jTextFieldIDSede.setText(sed);
+                pr.Primera();
+                System.out.println("sed jt"+pr.jTextFieldIDSede.getText());
+                pr.setVisible(true);
+                this.dispose();
+            }else{
+                JOptionPane.showMessageDialog(null ,"Login invalido" );
+            }
         }else{
-            JOptionPane.showMessageDialog(null ,"Login invalido" );
+            JOptionPane.showMessageDialog(null, "Seleccione una sede");
         }
         
     }//GEN-LAST:event_IngresarButtonActionPerformed
@@ -190,6 +195,7 @@ public class login extends javax.swing.JFrame {
         // TODO add your handling code here:
         Receptor r = new Receptor();
         String Nit = jTextFieldNit.getText();
+        if(!Nit.equals(null)){
         List<Sede> aux = r.LlenarComboBox(Nit);
         String nombreE = r.buscarNombreEntidadXNit(Nit);
         if(!aux.equals(null)){
@@ -199,6 +205,9 @@ public class login extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "No hay sedes asociadas al nit");
         }
         this.jComboBoxSedes.updateUI();
+        }else{
+            JOptionPane.showMessageDialog(null, "Ingrese un nit");
+        }
     }//GEN-LAST:event_jButtonMostrarSedesActionPerformed
 
     private void jComboBoxSedesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxSedesActionPerformed
