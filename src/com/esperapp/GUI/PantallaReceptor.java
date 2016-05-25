@@ -209,10 +209,7 @@ public class PantallaReceptor extends javax.swing.JFrame {
         String respuesta = null;
         if(!jTextFieldTurno.equals(null)){
             respuesta=r.RegistrarComoAtendido(jTextFieldTurno.getText(), this.jTextFieldIDSede.getText());
-            if(respuesta.equals("0")){
-                this.jTextFieldEstado.setText("Libre");
-                
-            }
+            this.jTextFieldEstado.setText("Libre");
             this.jTextFieldEstado.updateUI();
         }
         List<Turno> turnosNN=r.TurnosNoAtendidos(this.jTextFieldIDSede.getText());
